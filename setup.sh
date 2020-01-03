@@ -14,9 +14,10 @@ email=$(git config user.email)
 # If this script is called with an argument, use that as the amended author
 # EX: ./setup.sh "Author Name <author_email@email.com>"
 if [[ "$1" ]]; then
-	git commit --amend --author="$1"
+	git commit --amend --author="$1" -m'Created from cpp-project'
 else
-	git commit --amend --author="$name <$email>" 
+	git commit --amend --author="$name <$email>" -m'Created from cpp-project'
+
 fi
 
 # Initialize submodules: This is done by CMake, but there are ways to muck it
